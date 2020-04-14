@@ -1,17 +1,17 @@
 import React from 'react';
 import { Card, Avatar, Row, Col } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import Image from '../images/work.jpg'
 
-const infoStyles: React.CSSProperties = {
-    marginTop: '5vh',
-    marginLeft: '20vw',
-    marginRight: '20vw',
-    marginBottom: '5vh'
+const h1Styles: React.CSSProperties = {
+    fontSize:'5vw',
+    color: 'white'
 }
 
 const cardStyles: React.CSSProperties = {
-    width: '60vw',
-    marginTop: '3vh'
+    marginTop: 'calc(5vh + 48px)',
+    marginBottom:'5vh',
+    width: '40vw'
 }
 
 const titleAvatarStyles: React.CSSProperties = {
@@ -25,6 +25,34 @@ const titleStyles: React.CSSProperties = {
 const titleTextStyles: React.CSSProperties = {
     textAlign: 'left',
     marginTop: '14px'
+}
+
+const containerStyles: React.CSSProperties = {
+    backgroundImage: `url(${Image})`,
+    backgroundPosition: 'center',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    height: "calc(100vh - 48px)"
+}
+
+const name: React.CSSProperties = {
+    background: 'rgba(0, 0, 0, 0.4)',
+    flexBasis: '50vw',
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    margin: '0',
+    padding: '0'
+}
+
+const contentStyles: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    flexBasis: '50vw',
+    justifyContent: 'center',
+    alignItems: 'center'
 }
 
 
@@ -44,8 +72,11 @@ const title = (companyName: string) => {
 }
 const Experience = () => {
     return (
-        <div>
-            <div style={infoStyles}>
+        <div style={containerStyles}>
+            <div style={name}>
+            <h1 style={h1Styles}>Experience</h1>
+            </div>
+            <div style={contentStyles}>
                 <Card title={title('Kayak')} bordered={false} style={cardStyles}>
                     <p>Card content</p>
                     <p>Card content</p>

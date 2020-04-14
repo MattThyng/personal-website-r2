@@ -1,5 +1,4 @@
-import React, { Key, Component } from 'react';
-import { url } from 'inspector';
+import React from 'react';
 import Image from '../images/home.jpg'
 
 const showcaseStyles: React.CSSProperties = {
@@ -13,7 +12,7 @@ const showcaseStyles: React.CSSProperties = {
     textAlign: 'center',
     padding: '0 20px',
     backgroundImage: `url(${Image})`,
-    height: '100vh',
+    height: "calc(100vh - 48px)",
     margin: '0'
   };
 

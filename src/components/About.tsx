@@ -1,50 +1,69 @@
 import React from 'react';
-import { Card, Row, Col, Avatar } from 'antd';
+import { Card } from 'antd';
+import Image from '../images/about.jpg'
 
-const infoStyles: React.CSSProperties = {
-    marginTop: '5vh',
-    marginLeft: '20vw',
-    marginRight: '20vw'
+const h1Styles: React.CSSProperties = {
+    fontSize:'5vw',
+    color: 'white'
 }
 
 const cardStyles: React.CSSProperties = {
-    textAlign: 'center'
+    marginTop: 'calc(5vh + 48px)',
+    marginBottom:'5vh',
+    width: '40vw'
+}
+
+const innerCardStyles: React.CSSProperties = {
+    marginTop: '1vh'
+}
+
+const containerStyles: React.CSSProperties = {
+    backgroundImage: `url(${Image})`,
+    backgroundPosition: 'center',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    height: "calc(100vh - 48px)"
+}
+
+const name: React.CSSProperties = {
+    background: 'rgba(0, 0, 0, 0.4)',
+    flexBasis: '50vw',
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    margin: '0',
+    padding: '0'
+}
+
+const contentStyles: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    flexBasis: '50vw',
+    justifyContent: 'center',
+    alignItems: 'center'
 }
 
 const About = () => {
     return (
-        <div style={infoStyles}>
-            <Row gutter={50}>
-                <Col span={8}>
-                    <Card title="About Me" bordered={false} style={cardStyles} >
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Fusce vitae pulvinar augue. Nunc auctor, orci venenatis consectetur
-                        ultricies, enim mi fermentum dolor, ac bibendum turpis nibh eu est.
-                        Vestibulum tristique felis eu blandit molestie. Maecenas odio nibh,
-                        consequat sed sem non, convallis sollicitudin lectus. Nullam elementum
-                        consequat diam, in vulputate enim mattis ac. Donec gravida turpis libero,
-                        sed interdum nulla commodo nec. Mauris vitae purus id mi auctor mattis.
-                        Phasellus efficitur justo in nisl finibus pulvinar. Morbi eget pellentesque libero.
-                        Mauris pretium nunc sit amet tellus aliquet, in venenatis eros rhoncus.</p>
-                        <p>Quisque nec risus risus. Integer sagittis justo id nunc congue fringilla.
-                        Donec vitae ipsum eget purus eleifend venenatis vel at purus. Mauris
-                        porttitor accumsan sodales. Fusce id lorem eu libero aliquet eleifend.
-                        Aliquam tempor purus vitae odio vehicula, eu pharetra est semper. Nullam
-                        fringilla mauris vitae turpis finibus auctor. Nullam vel rutrum leo. Donec
-                        dapibus vel neque aliquet efficitur.</p>
+        <div style={containerStyles}>
+            <div style={name}>
+            <h1 style={h1Styles}>About</h1>
+            </div>
+            <div style={contentStyles}>
+                <Card title={'Matthew Thyng'} bordered={false} style={cardStyles}>
+                    <Card type="inner" title="Education" style={innerCardStyles}>
+                        Inner Card content
                     </Card>
-                </Col>
-                <Col span={8}>
-                    <Card title="Education" bordered={false}>
-                    Card content
+                    <Card type="inner" title="Acheivements" style={innerCardStyles}>
+                        Inner Card content
                     </Card>
-                </Col>
-                <Col span={8}>
-                    <Card title="Acheivements" bordered={false}>
-                    Card content
+                    <Card type="inner" title="Mission" style={innerCardStyles}>
+                        Inner Card content
                     </Card>
-                </Col>
-            </Row>
+                </Card>
+            </div>
         </div>
     );
   }

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card } from 'antd';
+import Image from '../images/skills.jpg'
 // pull from linkedin?
 
-const skillsStyles: React.CSSProperties = {
-    marginTop: '5vh',
-    marginLeft: '20vw',
-    marginRight: '20vw'
+const h1Styles: React.CSSProperties = {
+    fontSize:'5vw',
+    color: 'white'
 }
 
 const gridStyle: React.CSSProperties = {
@@ -14,8 +14,37 @@ const gridStyle: React.CSSProperties = {
 }
 
 const cardStyles: React.CSSProperties = {
-    width: '60vw',
-    marginTop: '3vh'
+    width: '40vw',
+    marginTop: '5vh',
+    marginBottom: '5vh'
+}
+
+const containerStyles: React.CSSProperties = {
+    backgroundImage: `url(${Image})`,
+    backgroundPosition: 'center',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    height: "calc(100vh - 48px)"
+}
+
+const name: React.CSSProperties = {
+    background: 'rgba(0, 0, 0, 0.4)',
+    flexBasis: '50vw',
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    margin: '0',
+    padding: '0'
+}
+
+const contentStyles: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    flexBasis: '50vw',
+    justifyContent: 'center',
+    alignItems: 'center'
 }
 
 const skillsData = [
@@ -39,7 +68,11 @@ const skillsData = [
 
 const Skills = () => {
     return (
-        <div style={skillsStyles}>
+        <div style={containerStyles}>
+            <div style={name}>
+            <h1 style={h1Styles}>Skills</h1>
+            </div>
+            <div style={contentStyles}>
             {skillsData.map(item => (
                 <Card title={item.title} style={cardStyles}>
                     {item.content.map(name => (
@@ -48,6 +81,7 @@ const Skills = () => {
                 </Card>
 
             ))}
+            </div>
         </div>
     )
 }

@@ -11,16 +11,16 @@ import Cover from './components/Cover';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
+import Links from './components/links';
 
-const { SubMenu } = Menu;
-
-const style = {
+const style: React.CSSProperties = {
   background: '#ececec',
-  margin: '0'
+  margin: '0',
+  overflow: 'hidden'
 }
 
 const menuStyles: React.CSSProperties = {
-  position: 'fixed',
+  margin: '0',
   width: '100vw',
   textAlign:'right'
 }
@@ -46,20 +46,24 @@ const App = () => {
             <AppstoreOutlined />
             About
           </Menu.Item>
+          <Menu.Item onClick={()=> handleClick('Experience')}>
+            <AppstoreOutlined />
+            Experience
+          </Menu.Item>
           <Menu.Item onClick={()=> handleClick('Skills')}>
             <AppstoreOutlined />
             Skills
           </Menu.Item>
-          <Menu.Item onClick={()=> handleClick('Projects')}>
+          <Menu.Item onClick={()=> handleClick('Links')}>
             <AppstoreOutlined />
-            Projects
+            Links
           </Menu.Item>
         </Menu>
-        <Cover/>
-        <About/>
-        <Experience/>
-        <Skills/>
-        <Footer/>
+        {menuState==='Home' && <Cover/>}
+        {menuState==='About' && <About/>}
+        {menuState==='Experience' && <Experience/>}
+        {menuState==='Skills' && <Skills/>}
+        {menuState==='Links' && <Links/>}
     </div>
   );
 }
